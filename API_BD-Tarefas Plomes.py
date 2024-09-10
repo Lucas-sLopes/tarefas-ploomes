@@ -130,12 +130,10 @@ def atualizarBD():
     ultma_atualizacao = dat.datetime.now()
     print(f'Ultima atualização: {ultma_atualizacao}')
 
-# schedule.every(1).minutes.do(atualizarBD)
+schedule.every(30).minutes.until("20:30").do(atualizarBD)
 
-# while True:
-#     schedule.run_pending()
-#     tm.sleep(1)
+while True:
+    schedule.run_pending()
+    tm.sleep(1)
 
-
-atualizarBD()
 
